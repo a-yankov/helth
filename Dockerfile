@@ -1,3 +1,3 @@
-FROM openliberty/open-liberty:microProfile2-java8-openj9
-COPY liberty/server.xml /config/
-ADD target/helth.war /config/dropins/
+FROM openjdk:12-alpine
+COPY target/helth-wildfly.jar /demo.jar
+CMD ["java", "-jar", "/demo.jar"]
